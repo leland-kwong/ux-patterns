@@ -52,7 +52,6 @@ function ListItem({
       onMouseDown={handleMouseDown}
       style={{
         padding: '8px 12px',
-        cursor: 'default',
         backgroundColor: isHighlighted
           ? '#e5e7eb'
           : 'transparent',
