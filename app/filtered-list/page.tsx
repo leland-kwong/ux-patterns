@@ -50,7 +50,7 @@ export default function FilteredListPage() {
   const numberOfRows = visibleRows.length
   const numberOfAllRows = filteredRows.length
   const resultsSummary = (
-    <div className="text-sm text-gray-600 italic">
+    <div className="text-xs text-gray-600 italic">
       Showing <b>{numberOfRows}</b> of{' '}
       <b>{numberOfAllRows}</b> matching results
     </div>
@@ -106,55 +106,57 @@ The result is a simpler workflow that matches how these tools are actually used:
     <PageContainer>
       <div className="flex min-h-0 h-full">
         {description}
-        <div className="border-r border-gray-300" />
-        <div className="flex flex-col p-4 flex-1">
+        <div className="border-r border-gray-200" />
+        <div className="flex flex-col p-4 flex-1 bg-gray-50 min-h-0 h-full">
           {demoLabel}
-          {searchExamples}
-          <FilteredList
-            placeholder="Search logs..."
-            rows={visibleRows}
-            searchText={searchText}
-            onSearchTextChange={setSearchText}
-            onItemSelect={handleItemSelect}
-            getKey={(item: ServerLog) => item.timestamp}
-            renderItem={(item: ServerLog) => {
-              return (
-                <div>
-                  <div className="text-sm font-medium">
-                    <span
-                      className={getItemTypeColor(
-                        item.type
-                      )}
-                    >
-                      [{item.type}]
-                    </span>{' '}
-                    <span className="font-bold">
-                      {item.description}
-                    </span>
+          <div className="flex flex-col min-h-0 h-full p-4 bg-white rounded shadow border border-gray-200">
+            {searchExamples}
+            <FilteredList
+              placeholder="Search logs..."
+              rows={visibleRows}
+              searchText={searchText}
+              onSearchTextChange={setSearchText}
+              onItemSelect={handleItemSelect}
+              getKey={(item: ServerLog) => item.timestamp}
+              renderItem={(item: ServerLog) => {
+                return (
+                  <div>
+                    <div className="text-sm font-medium">
+                      <span
+                        className={getItemTypeColor(
+                          item.type
+                        )}
+                      >
+                        [{item.type}]
+                      </span>{' '}
+                      <span className="font-bold">
+                        {item.description}
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      {new Date(
+                        item.timestamp
+                      ).toLocaleString()}
+                    </div>
+                    <ul className="font-mono bg-gray-100 p-2 mt-2 rounded text-xs space-y-1">
+                      {Object.keys(item.data).map((k) => (
+                        <li key={k}>
+                          <span className="text-purple-600">
+                            {k}
+                          </span>
+                          :{' '}
+                          <span className="text-green-800">
+                            {String(item.data[k])}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="text-xs text-gray-500">
-                    {new Date(
-                      item.timestamp
-                    ).toLocaleString()}
-                  </div>
-                  <ul className="font-mono bg-gray-100 p-2 mt-2 rounded text-xs space-y-1">
-                    {Object.keys(item.data).map((k) => (
-                      <li key={k}>
-                        <span className="text-purple-600">
-                          {k}
-                        </span>
-                        :{' '}
-                        <span className="text-green-800">
-                          {String(item.data[k])}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            }}
-            resultsSummary={resultsSummary}
-          />
+                )
+              }}
+              resultsSummary={resultsSummary}
+            />
+          </div>
         </div>
       </div>
     </PageContainer>

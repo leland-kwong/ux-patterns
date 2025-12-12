@@ -142,7 +142,7 @@ export function FilteredList<Item>({
           fontSize: '14px'
         }}
       />
-      <div>{resultsSummary}</div>
+      <div className="mt-2 mb-1">{resultsSummary}</div>
       <ul
         {...getMenuProps()}
         style={{
@@ -150,7 +150,6 @@ export function FilteredList<Item>({
           overflowY: 'auto',
           listStyle: 'none',
           padding: 0,
-          margin: '8px 0 0 0',
           border:
             isOpen && rows.length > 0
               ? '1px solid #d1d5db'
