@@ -1,53 +1,88 @@
-# 🚀 Leland Admin Starter (The "No-Nonsense" Stack)
+# Enterprise UX Patterns
 
-A high-performance, type-safe React admin dashboard designed for **Enterprise workflows**, not social media apps.
+**Practical UX patterns for complex enterprise systems.**
 
-This starter kit is built by Leland Studio for clients who value **Clarity** and **Execution** over flashy complexity.
+This repository contains a growing collection of UX patterns and interactive examples focused on a recurring challenge in enterprise software:
 
-## 🧠 The Philosophy
+> Designing interfaces that scale in complexity
+> without overwhelming the people who use them.
 
-Most admin templates are over-engineered. They prioritize virtualization demos over actual usability. This starter kit is built on three contrarian opinions that save engineering time and improve user outcomes:
-
-### 1. Pagination > Virtualization
-
-**Virtual Scrolling is an anti-pattern in Enterprise UI.**
-
-- **The Problem:** Virtualization breaks fundamental browser features (like native `Cmd+F` search) and introduces massive engineering overhead when dealing with variable-height rows and complex state management.
-- **The Solution:** We use **Server-Side Pagination** and **High-Density Layouts**. This respects the DOM, respects accessibility standards, and eliminates scroll jitter.
-
-### 2. Search First, Scroll Second
-
-If a user has to scroll past row 50, the UI has failed.
-
-- Instead of optimizing for "rendering 10,000 rows," we optimize for **filtering down to the 10 rows that matter.**
-- This starter features a **Command Palette-style filter bar** that empowers the user to build precise queries, treating the grid as the _result_ of a search, not the primary navigation tool.
-
-### 3. Boring Code is Better
-
-- We prioritize **Stability**, **Type Safety**, and **Respect for the User’s CPU**.
-- The code is built with clear separation of concerns (TanStack for logic, Tailwind for presentation). The complexity should live in your business logic, not your UI library.
+Rather than focusing on components or visual styling, this project explores **interaction models, constraints, and workflows** that help users stay oriented and effective in data-heavy environments.
 
 ---
 
-## 🛠 Tech Stack
+## Why this project exists
 
-| Component      | Purpose                                           |
-| :------------- | :------------------------------------------------ |
-| **Framework**  | Next.js 14 (App Router)                           |
-| **Styling**    | Tailwind CSS + `shadcn/ui` (Enterprise Aesthetic) |
-| **Data Grid**  | TanStack Table (Logic)                            |
-| **State Sync** | `nuqs` (URL Query String Management)              |
-| **Utility**    | `clsx`, `tailwind-merge`                          |
+Enterprise applications are fundamentally different from consumer products.
 
-## 🚀 Key Features
+They often involve:
 
-- **URL-Syncable Filters:** Every query is reflected in the URL, making views instantly shareable and bookmarkable (a critical feature for SRE/SecOps).
-- **Performance-Focused Data Handling:** Optimized for fetching and displaying data fast, without relying on computationally expensive virtualization libraries.
-- **Clean, Accessible UI:** Built on Radix Primitives for keyboard navigation and WCAG compliance.
+- large and complex datasets
+- dense information
+- expert users
+- long-lived workflows
+- high cognitive load
+
+Yet many enterprise UIs grow by accumulation—features layered on top of features—until the system becomes harder to use, reason about, and evolve.
+
+This project documents **intentional UX patterns** that aim to reduce cognitive load, clarify user intent, and make complex systems feel more manageable.
 
 ---
 
-**Need help implementing this philosophy in your existing application?**
-I am a Senior Design Engineer with specialized experience building high-performance, data-heavy applications. I offer short-term consultation sprints to upgrade your existing UI or architect a new one.
+## What you'll find here
 
-_Connect with Leland Kwong at https://www.linkedin.com/in/lelandkwong/ or lelandkwong.com._
+Each pattern is presented as:
+
+- a short explanation of the underlying UX idea
+- a clear rationale for the constraints involved
+- a focused interactive example
+- realistic scenarios inspired by real-world systems
+
+These patterns are **illustrative, not prescriptive**.
+They are meant to spark better design decisions, not dictate a single “correct” implementation.
+
+---
+
+## Design principles
+
+The patterns in this repository are guided by a few recurring ideas:
+
+- UX should reflect how users actually work
+- Constraints are often a feature, not a limitation
+- Clear interaction models matter more than visual polish
+- Simplicity scales better than cleverness
+- Complexity should earn its place
+
+Different examples may emphasize different principles, but all aim to make complex systems easier to understand and operate.
+
+---
+
+## Who this is for
+
+- Engineers building enterprise or internal tools
+- Designers working on data-heavy interfaces
+- Tech leads thinking about UX tradeoffs at scale
+- Anyone interested in practical UX for complex systems
+
+---
+
+## Status
+
+This project is actively evolving.
+
+New patterns and examples will be added over time as different UX problems are explored, refined, and stress-tested.
+
+---
+
+## Author
+
+Built by **Leland Kwong**
+Frontend & Design Engineer
+
+This project reflects hands-on experience designing and building UX for complex enterprise applications.
+
+---
+
+## License
+
+MIT
