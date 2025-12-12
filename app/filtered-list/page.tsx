@@ -75,21 +75,19 @@ export default function FilteredListPage() {
   const descriptionMarkdown = `
 ## ${pageTitle}
 
-*Most enterprise UIs don't need virtual scrolling — they need better filtering.*
+*Most enterprise UIs don’t need virtual scrolling — they need better filtering.*
 
-In data-heavy systems (logs, users, transactions, audits), users rarely read thousands of rows. They're searching for something specific. A search-first interface reflects that reality: narrow the dataset first, then explore what remains.
+In data-heavy systems (logs, users, transactions, audits), users rarely read thousands of rows. They’re searching for something specific. A search-first interface reflects that reality: narrow the dataset first, then explore what remains.
 
-Instead of rendering massive lists and compensating with virtualization, this pattern filters first and caps visible results. The UI stays fast, predictable, and cognitively manageable — even with variable-height, structured content.
+Instead of rendering massive lists and compensating with virtualization, this pattern **filters aggressively and caps visible results**. The UI stays fast, predictable, and cognitively manageable — even when entries vary in size and structure.
 
-The result is a simpler workflow that matches how these tools are actually used: find first, explore second.
+The result is a workflow that matches how these tools are actually used: **find first, explore second**.
 
-### Rationale
+### Subtle but important
 
-- In enterprise applications, users rarely read through thousands of rows — they're searching for something specific.
-- A search-first workflow eliminates the need for pagination, infinite scroll, or virtualized rendering.
-- Capping the visible results (e.g., top 100 matches) keeps the interface fast, predictable, and cognitively manageable.
-- This pattern supports variable-height, structured log entries, something virtual scrolling struggles with.
-- The result is a simpler UI that matches real-world workflows: find first, explore second.
+- **Capped result sets** (e.g., top 100 matches) prevent performance degradation and cognitive overload.
+- **Variable-height, structured entries** expand naturally without requiring complex virtualization logic.
+- **Predictable rendering** keeps the interface stable as users refine queries and inspect results.
   `
   const demoLabel = (
     <div className="text-xs font-bold uppercase tracking-wider mb-3 text-gray-600">
