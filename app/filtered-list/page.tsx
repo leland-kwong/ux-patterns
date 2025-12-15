@@ -79,15 +79,15 @@ export default function FilteredListPage() {
 
 In data-heavy systems (logs, users, transactions, audits), users rarely read thousands of rows. They’re searching for something specific. A search-first interface reflects that reality: narrow the dataset first, then explore what remains.
 
-Instead of rendering massive lists and compensating with virtualization, this pattern **filters aggressively and caps visible results**. The UI stays fast, predictable, and cognitively manageable — even when entries vary in size and structure.
+Instead of rendering massive lists and compensating with virtualization, this pattern **filters aggressively and caps visible results**.
 
 The result is a workflow that matches how these tools are actually used: **find first, explore second**.
 
 ### Subtle but important
 
 - **Capped result sets** (e.g., top 100 matches) prevent performance degradation and cognitive overload.
-- **Variable-height, structured entries** expand naturally without requiring complex virtualization logic.
 - **Predictable rendering** keeps the interface stable as users refine queries and inspect results.
+- **Variable-height, structured entries** expand naturally without requiring complex virtualization logic.
   `
   const demoLabel = (
     <div className="text-xs font-bold uppercase tracking-wider mb-3 text-gray-600">
@@ -95,7 +95,7 @@ The result is a workflow that matches how these tools are actually used: **find 
     </div>
   )
   const description = (
-    <div className="text-base max-w-prose px-4 markdown-content overflow-auto">
+    <div className="max-w-prose px-4 markdown-content overflow-auto">
       <ReactMarkdown>{descriptionMarkdown}</ReactMarkdown>
     </div>
   )

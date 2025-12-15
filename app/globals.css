@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-color-prose: #374151;
 }
 
 @theme inline {
@@ -27,6 +28,7 @@ body {
 /* Markdown content styles */
 .markdown-content {
   line-height: 1.6;
+  color: var(--font-color-prose);
 }
 
 .markdown-content h2 {
