@@ -14,20 +14,19 @@ const ButtonGroup = React.forwardRef<
     >
       {React.Children.map(children, (child, index) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(
-            child as React.ReactElement<any>,
-            {
-              className: cn(
-                child.props.className,
-                'rounded-none',
-                index === 0 && 'rounded-l-md!',
-                index ===
-                  React.Children.count(children) - 1 &&
-                  'rounded-r-md!',
-                index !== 0 && '-ml-px'
-              )
-            }
-          )
+          const element = child as React.ReactElement<{
+            className?: string
+          }>
+          return React.cloneElement(element, {
+            className: cn(
+              element.props.className,
+              'rounded-none',
+              index === 0 && 'rounded-l-md!',
+              index === React.Children.count(children) - 1 &&
+                'rounded-r-md!',
+              index !== 0 && '-ml-px'
+            )
+          })
         }
         return child
       })}
