@@ -2,6 +2,7 @@ import { PageContainer } from '../components/PageContainer'
 import { DemoLabel } from '../components/Label'
 import { LoremIpsum } from '../components/LoremIpsum'
 import ReactMarkdown from 'react-markdown'
+import { FlexContainer as Container } from '../components/FlexContainer'
 
 function PanelTitle({
   children
@@ -10,20 +11,6 @@ function PanelTitle({
 }) {
   return (
     <h3 className="text-sm font-semibold">{children}</h3>
-  )
-}
-
-function Container({
-  children,
-  className = ''
-}: {
-  children?: React.ReactNode
-  className?: string
-}) {
-  return (
-    <div className={`min-h-0 h-full min-w-0 ${className}`}>
-      {children}
-    </div>
   )
 }
 
@@ -64,7 +51,7 @@ function PrimaryContent() {
 const descriptionText = `
 ## Base Layout
 
-Most enterprise applications start with a simple layout. Over time, features get added, panels multiply, and scrolling behavior becomes inconsistent and hard to reason about.
+*Most enterprise applications start with a simple layout. Over time, features get added, panels multiply, and scrolling behavior becomes inconsistent and hard to reason about.*
 
 This pattern demonstrates a basic but intentional layout structure with a header, sidebar, and a single, well-defined scrollable content area.
 
