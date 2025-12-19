@@ -1,20 +1,5 @@
 import { PageHeader } from './PageHeader'
-import Link from 'next/link'
-
-function SideNav() {
-  return (
-    <ul className="w-32 p-4">
-      <li>
-        <Link
-          href="/filtered-list"
-          className="font-bold hover:underline"
-        >
-          Filtered List
-        </Link>
-      </li>
-    </ul>
-  )
-}
+import { SideNav } from './SideNav'
 
 export function PageContainer({
   children
@@ -26,11 +11,13 @@ export function PageContainer({
       <div className="shrink-0">
         <PageHeader />
       </div>
-      <div className="flex min-h-0 h-full">
+      <div className="flex min-h-0 h-full min-w-0">
         <div className="h-full border-r border-gray-300 bg-gray-50">
           <SideNav />
         </div>
-        <div className="flex-1 h-full">{children}</div>
+        <div className="flex-1 h-full min-w-0">
+          {children}
+        </div>
       </div>
     </main>
   )
