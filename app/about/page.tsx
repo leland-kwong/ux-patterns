@@ -6,7 +6,7 @@ const content = `
 
 Enterprise UX Patterns is a practical reference for designing and building complex, data-dense enterprise interfaces.
 
-The patterns documented here are based on real constraints—scale, performance, legacy systems, and long-lived workflows—not idealized consumer UX. They reflect how enterprise tools are actually used: users search for something specific, narrow the dataset, and then explore what remains.
+The patterns documented here are based on real constraints—scale, performance, legacy systems, and long-lived workflows—not idealized consumer UX.
 
 Each pattern focuses on behavior, trade-offs, and implementation details. These are not prescriptions or universal rules, but starting points for teams that already understand that good UX is situational.`
 

@@ -7,6 +7,7 @@ import type { ServerLog } from '../mock-data/server-logs'
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import ReactMarkdown from 'react-markdown'
+import { DemoLabel } from '../components/Label'
 
 function getItemTypeColor(type: string) {
   switch (type) {
@@ -89,11 +90,6 @@ The result is a workflow that matches how these tools are actually used: **find 
 - **Predictable rendering** keeps the interface stable as users refine queries and inspect results.
 - **Variable-height, structured entries** expand naturally without requiring complex virtualization logic.
   `
-  const demoLabel = (
-    <div className="text-xs font-bold uppercase tracking-wider mb-3 text-gray-600">
-      Demo
-    </div>
-  )
   const description = (
     <div className="max-w-prose px-4 markdown-content overflow-auto">
       <ReactMarkdown>{descriptionMarkdown}</ReactMarkdown>
@@ -105,9 +101,9 @@ The result is a workflow that matches how these tools are actually used: **find 
       <div className="flex min-h-0 h-full">
         {description}
         <div className="border-r border-gray-200" />
-        <div className="flex flex-col p-4 flex-1 bg-gray-50 min-h-0 h-full">
-          {demoLabel}
-          <div className="flex flex-col min-h-0 h-full p-4 bg-white rounded shadow border border-gray-200">
+        <div className="flex flex-col p-4 flex-1 bg-gray-50 min-h-0 h-full min-w-0">
+          <DemoLabel>Demo</DemoLabel>
+          <div className="flex flex-col min-h-0 h-full p-4 bg-white rounded shadow border border-gray-200 resize overflow-auto max-w-full">
             {searchExamples}
             <FilteredList
               placeholder="Search logs..."
