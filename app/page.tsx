@@ -1,5 +1,6 @@
-import FilteredListPage from './filtered-list/page'
+import { redirect } from 'next/navigation'
+import { links } from './navigation-links'
 
 export default function Home() {
-  return <FilteredListPage />
+  redirect(links[0].href)
 }

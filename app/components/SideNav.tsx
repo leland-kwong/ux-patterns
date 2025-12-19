@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { links } from '../navigation-links'
 
 interface SideNavLinkProps {
   href: string
@@ -35,11 +36,6 @@ function SideNavLink({
     </Link>
   )
 }
-
-const links = [
-  { href: '/base-layout', label: 'Base Layout' },
-  { href: '/filtered-list', label: 'Filtered List' }
-]
 
 export function SideNav() {
   return (
