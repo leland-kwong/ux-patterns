@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Link from 'next/link'
 import { LogoIcon } from './LogoIcon'
 import { APP_CONFIG } from '../config'
@@ -19,7 +20,9 @@ export function PageHeader() {
           </span>
         </Link>
         <div>
-          <DemoFilters />
+          <Suspense fallback={<div className="w-24 h-9" />}>
+            <DemoFilters />
+          </Suspense>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-1 items-center">
