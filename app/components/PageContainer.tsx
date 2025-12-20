@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { PageHeader } from './PageHeader'
 import { SideNav } from './SideNav'
 
@@ -13,7 +14,9 @@ export function PageContainer({
       </div>
       <div className="flex min-h-0 h-full min-w-0">
         <div className="h-full border-r border-gray-300 bg-gray-50">
-          <SideNav />
+          <Suspense fallback={<div className="w-48 p-4" />}>
+            <SideNav />
+          </Suspense>
         </div>
         <div className="flex-1 h-full min-w-0">
           {children}

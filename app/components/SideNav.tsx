@@ -1,9 +1,10 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { links } from '../navigation-links'
 import { useFilterKeys } from './DemoFilters'
+import { useMemo } from 'react'
 
 interface SideNavLinkProps {
   href: string
@@ -23,20 +24,22 @@ function SideNavLink({
   inactiveClassName = ''
 }: SideNavLinkProps) {
   const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   const isActive = exactMatch
     ? pathname === href
     : pathname === href || pathname.startsWith(href + '/')
 
   // Preserve current search params when navigating
-  // Use the raw query string to avoid re-encoding
-  const queryString =
-    typeof window !== 'undefined'
-      ? window.location.search.slice(1)
-      : ''
-  const linkHref = queryString
-    ? `${href}?${queryString}`
-    : href
+  // Manually build query string to avoid URL encoding
+  const linkHref = useMemo(() => {
+    const params: string[] = []
+    searchParams.forEach((value, key) => {
+      params.push(`${key}=${value}`)
+    })
+    const queryString = params.join('&')
+    return queryString ? `${href}?${queryString}` : href
+  }, [href, searchParams])
 
   return (
     <Link
