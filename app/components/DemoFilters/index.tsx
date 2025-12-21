@@ -13,23 +13,13 @@ import {
   parseAsArrayOf,
   parseAsStringLiteral
 } from 'nuqs'
-
-export const FilterChoices = {
-  find_things: "Users can't find things",
-  scroll_broken: 'Scrolling feels broken',
-  ui_clutter: 'Too much is on screen',
-  layout_foundation: 'Layout feels off',
-  ui_complexity: 'UI keeps getting heavier'
-} as const
-
-export type FilterChoiceKey = keyof typeof FilterChoices
-export type FilterChoice =
-  (typeof FilterChoices)[keyof typeof FilterChoices]
-
-export const filterChoices = Object.values(FilterChoices)
-export const filterChoiceKeys = Object.keys(
-  FilterChoices
-) as FilterChoiceKey[]
+import {
+  FilterChoices,
+  FilterChoice,
+  FilterChoiceKey,
+  filterChoices,
+  filterChoiceKeys
+} from './filterChoices'
 
 export const useFilterKeys = () =>
   useQueryState(

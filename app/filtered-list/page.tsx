@@ -6,8 +6,8 @@ import { generateServerLogs } from '../mock-data/server-logs'
 import type { ServerLog } from '../mock-data/server-logs'
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import ReactMarkdown from 'react-markdown'
 import { DemoLabel } from '../components/Label'
+import { DemoDescription } from '../components/DemoDescription'
 
 function getItemTypeColor(type: string) {
   switch (type) {
@@ -74,11 +74,9 @@ export default function FilteredListPage() {
     </div>
   )
   const descriptionMarkdown = `
-## ${pageTitle}
+*Most enterprise UIs don't need virtual scrolling — they need better filtering.*
 
-*Most enterprise UIs don’t need virtual scrolling — they need better filtering.*
-
-In data-heavy systems (logs, users, transactions, audits), users rarely read thousands of rows. They’re searching for something specific. A search-first interface reflects that reality: narrow the dataset first, then explore what remains.
+In data-heavy systems (logs, users, transactions, audits), users rarely read thousands of rows. They're searching for something specific. A search-first interface reflects that reality: narrow the dataset first, then explore what remains.
 
 Instead of rendering massive lists and compensating with virtualization, this pattern **filters aggressively and caps visible results**.
 
@@ -91,9 +89,9 @@ The result is a workflow that matches how these tools are actually used: **find 
 - **Variable-height, structured entries** expand naturally without requiring complex virtualization logic.
   `
   const description = (
-    <div className="max-w-prose px-4 markdown-content overflow-auto">
-      <ReactMarkdown>{descriptionMarkdown}</ReactMarkdown>
-    </div>
+    <DemoDescription title={pageTitle}>
+      {descriptionMarkdown}
+    </DemoDescription>
   )
 
   return (

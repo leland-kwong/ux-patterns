@@ -1,8 +1,8 @@
 import { PageContainer } from '../components/PageContainer'
 import { DemoLabel } from '../components/Label'
 import { LoremIpsum } from '../components/LoremIpsum'
-import ReactMarkdown from 'react-markdown'
 import { FlexContainer as Container } from '../components/FlexContainer'
+import { DemoDescription } from '../components/DemoDescription'
 
 function PanelTitle({
   children
@@ -49,8 +49,6 @@ function PrimaryContent() {
 }
 
 const descriptionText = `
-## Base Layout
-
 *Most enterprise applications start with a simple layout. Over time, features get added, panels multiply, and scrolling behavior becomes inconsistent and hard to reason about.*
 
 This pattern demonstrates a basic but intentional layout structure with a header, sidebar, and a single, well-defined scrollable content area.
@@ -76,9 +74,9 @@ The layout adapts by rearranging regions, not by layering conditional styles on 
 `
 
 const description = (
-  <div className="max-w-prose px-4 markdown-content overflow-auto">
-    <ReactMarkdown>{descriptionText}</ReactMarkdown>
-  </div>
+  <DemoDescription title="Base Layout">
+    {descriptionText}
+  </DemoDescription>
 )
 
 export default function AdaptiveLayoutPage() {

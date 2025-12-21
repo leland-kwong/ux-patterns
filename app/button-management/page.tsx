@@ -1,7 +1,7 @@
 import { PageContainer } from '../components/PageContainer'
 import { FlexContainer } from '../components/FlexContainer'
-import ReactMarkdown from 'react-markdown'
 import { DemoLabel } from '../components/Label'
+import { DemoDescription } from '../components/DemoDescription'
 import { Button } from '@/components/ui/button'
 import { ButtonGroup } from '@/components/ui/button-group'
 import {
@@ -13,8 +13,6 @@ import {
 import { ChevronDown } from 'lucide-react'
 
 const descriptionText = `
-## Button Management
-
 *Button explosion is a common issue in complex applications. As features are added, buttons tend to multiply, leading to cluttered interfaces and user confusion.*
 
 This pattern focuses on managing button proliferation through thoughtful grouping, prioritization, and contextual display. By organizing buttons into logical clusters and using progressive disclosure techniques, we can maintain a clean interface while still providing access to necessary actions.
@@ -22,9 +20,9 @@ This pattern focuses on managing button proliferation through thoughtful groupin
 Grouping alone reduces visual noise, but it does not resolve prioritization. Under real constraints, interfaces are forced to make decisions the team avoided.
 `
 const description = (
-  <div className="max-w-prose px-4 markdown-content overflow-auto">
-    <ReactMarkdown>{descriptionText}</ReactMarkdown>
-  </div>
+  <DemoDescription title="Button Management">
+    {descriptionText}
+  </DemoDescription>
 )
 
 function ButtonExplosionExample() {
