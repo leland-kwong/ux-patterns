@@ -1,7 +1,7 @@
-import { PageContainer } from '../components/PageContainer'
-import { FlexContainer } from '../components/FlexContainer'
-import { DemoLabel } from '../components/Label'
-import { DemoDescription } from '../components/DemoDescription'
+import { PageContainer } from '@/app/components/PageContainer'
+import { FlexContainer } from '@/app/components/FlexContainer'
+import { DemoLabel } from '@/app/components/Label'
+import { DemoDescription } from '@/app/components/DemoDescription'
 import { Button } from '@/components/ui/button'
 import { ButtonGroup } from '@/components/ui/button-group'
 import {

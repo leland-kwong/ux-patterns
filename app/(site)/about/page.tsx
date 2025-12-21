@@ -1,4 +1,4 @@
-import { PageContainer } from '../components/PageContainer'
+import { PageContainer } from '@/app/components/PageContainer'
 import ReactMarkdown from 'react-markdown'
 
 const content = `

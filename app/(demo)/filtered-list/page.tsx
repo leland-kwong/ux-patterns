@@ -1,13 +1,13 @@
 'use client'
 
-import { FilteredList } from '../components/FilteredList'
-import { PageContainer } from '../components/PageContainer'
-import { generateServerLogs } from '../mock-data/server-logs'
-import type { ServerLog } from '../mock-data/server-logs'
+import { FilteredList } from '@/app/components/FilteredList'
+import { PageContainer } from '@/app/components/PageContainer'
+import { generateServerLogs } from '@/app/mock-data/server-logs'
+import type { ServerLog } from '@/app/mock-data/server-logs'
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { DemoLabel } from '../components/Label'
-import { DemoDescription } from '../components/DemoDescription'
+import { DemoLabel } from '@/app/components/Label'
+import { DemoDescription } from '@/app/components/DemoDescription'
 
 function getItemTypeColor(type: string) {
   switch (type) {

@@ -1,8 +1,8 @@
-import { PageContainer } from '../components/PageContainer'
-import { DemoLabel } from '../components/Label'
-import { LoremIpsum } from '../components/LoremIpsum'
-import { FlexContainer as Container } from '../components/FlexContainer'
-import { DemoDescription } from '../components/DemoDescription'
+import { PageContainer } from '@/app/components/PageContainer'
+import { DemoLabel } from '@/app/components/Label'
+import { LoremIpsum } from '@/app/components/LoremIpsum'
+import { FlexContainer as Container } from '@/app/components/FlexContainer'
+import { DemoDescription } from '@/app/components/DemoDescription'
 
 function PanelTitle({
   children

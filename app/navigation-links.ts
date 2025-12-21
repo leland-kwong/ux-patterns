@@ -1,4 +1,4 @@
-import type { FilterChoiceKey } from './components/DemoFilters/filterChoices'
+import type { FilterChoiceKey } from '@/app/components/DemoFilters/filterChoices'
 
 export const links: {
   href: string
