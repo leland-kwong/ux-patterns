@@ -11,16 +11,17 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { ChevronDown } from 'lucide-react'
+import { manifest } from './manifest'
 
 const descriptionText = `
-*Button explosion is a common issue in complex applications. As features are added, buttons tend to multiply, leading to cluttered interfaces and user confusion.*
+*${manifest.thesis}*
 
 This pattern focuses on managing button proliferation through thoughtful grouping, prioritization, and contextual display. By organizing buttons into logical clusters and using progressive disclosure techniques, we can maintain a clean interface while still providing access to necessary actions.
 
 Grouping alone reduces visual noise, but it does not resolve prioritization. Under real constraints, interfaces are forced to make decisions the team avoided.
 `
 const description = (
-  <DemoDescription title="Button Management">
+  <DemoDescription title={manifest.label}>
     {descriptionText}
   </DemoDescription>
 )

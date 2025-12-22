@@ -3,7 +3,7 @@
 import ReactMarkdown from 'react-markdown'
 import { getFilterChoiceLabel } from './DemoFilters/filterChoices'
 import { usePathname } from 'next/navigation'
-import { links } from '../navigation-links'
+import { links } from '@/app/demos'
 
 export function DemoDescription({
   title,

@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { DemoLabel } from '@/app/components/Label'
 import { DemoDescription } from '@/app/components/DemoDescription'
+import { manifest } from './manifest'
 
 function getItemTypeColor(type: string) {
   switch (type) {
@@ -59,7 +60,6 @@ export default function FilteredListPage() {
   const handleItemSelect = (item: unknown) => {
     console.log('Selected item:', item)
   }
-  const pageTitle = 'Filtered List'
   const searchExamples = (
     <div className="text-sm text-gray-500 mb-2">
       Try searching:{' '}
@@ -74,7 +74,7 @@ export default function FilteredListPage() {
     </div>
   )
   const descriptionMarkdown = `
-*Most enterprise UIs don't need virtual scrolling — they need better filtering.*
+*${manifest.thesis}*
 
 In data-heavy systems (logs, users, transactions, audits), users rarely read thousands of rows. They're searching for something specific. A search-first interface reflects that reality: narrow the dataset first, then explore what remains.
 
@@ -89,7 +89,7 @@ The result is a workflow that matches how these tools are actually used: **find 
 - **Variable-height, structured entries** expand naturally without requiring complex virtualization logic.
   `
   const description = (
-    <DemoDescription title={pageTitle}>
+    <DemoDescription title={manifest.label}>
       {descriptionMarkdown}
     </DemoDescription>
   )

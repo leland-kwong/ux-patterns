@@ -3,6 +3,7 @@ import { DemoLabel } from '@/app/components/Label'
 import { LoremIpsum } from '@/app/components/LoremIpsum'
 import { FlexContainer as Container } from '@/app/components/FlexContainer'
 import { DemoDescription } from '@/app/components/DemoDescription'
+import { manifest } from './manifest'
 
 function PanelTitle({
   children
@@ -49,7 +50,7 @@ function PrimaryContent() {
 }
 
 const descriptionText = `
-*Most enterprise applications start with a simple layout. Over time, features get added, panels multiply, and scrolling behavior becomes inconsistent and hard to reason about.*
+*${manifest.thesis}*
 
 This pattern demonstrates a basic but intentional layout structure with a header, sidebar, and a single, well-defined scrollable content area.
 
@@ -74,7 +75,7 @@ The layout adapts by rearranging regions, not by layering conditional styles on 
 `
 
 const description = (
-  <DemoDescription title="Base Layout">
+  <DemoDescription title={manifest.label}>
     {descriptionText}
   </DemoDescription>
 )

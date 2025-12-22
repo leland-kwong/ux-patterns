@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { links } from '../navigation-links'
+import { links } from '@/app/demos'
 import { useFilterKeys } from './DemoFilters'
 import { useMemo } from 'react'
 
