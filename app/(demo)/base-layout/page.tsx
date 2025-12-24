@@ -56,7 +56,7 @@ This pattern demonstrates a basic but intentional layout structure with a header
 
 The goal isn’t visual polish — it’s establishing clear layout and scroll boundaries early, so the interface doesn’t collapse under its own complexity later.
 
-### Subtle but important
+## Subtle but important
 
 - **Explicit scroll ownership**
 Only the primary content area scrolls. This avoids competing scroll regions and makes it clear where users should focus.

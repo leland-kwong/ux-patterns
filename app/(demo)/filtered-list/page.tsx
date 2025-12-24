@@ -82,7 +82,9 @@ Instead of rendering massive lists and compensating with virtualization, this pa
 
 The result is a workflow that matches how these tools are actually used: **find first, explore second**.
 
-### Subtle but important
+---
+
+## Subtle but important
 
 - **Capped result sets** (e.g., top 100 matches) prevent performance degradation and cognitive overload.
 - **Predictable rendering** keeps the interface stable as users refine queries and inspect results.
